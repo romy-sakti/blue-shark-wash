@@ -6,9 +6,15 @@ Stack: Laravel 11, Filament 3, MySQL (sesuai environment proyek ini).
 
 ## Tampilan login
 
-Halaman masuk panel admin (`/admin`), dengan logo bundar Blue Shark Wash.
+Halaman masuk panel admin (`/admin`). Kartu login menyesuaikan lebar layar; di layar pendek logo mengecil supaya tidak perlu scroll.
+
+**Desktop**
 
 ![Halaman login Blue Shark Wash](docs/screenshots/login.png)
+
+**Ponsel**
+
+![Halaman login Blue Shark Wash di ponsel](docs/screenshots/login-mobile.png)
 
 ## Menjalankan
 

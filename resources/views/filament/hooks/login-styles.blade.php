@@ -1,5 +1,11 @@
 <style>
     .fi-simple-layout {
+        min-height: 100svh;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
         background:
             radial-gradient(ellipse 80% 50% at 50% -15%, rgba(37, 99, 235, 0.55), transparent 58%),
             radial-gradient(ellipse 45% 40% at 100% 100%, rgba(8, 47, 123, 0.7), transparent 55%),
@@ -8,12 +14,20 @@
     }
 
     .fi-simple-layout .fi-simple-main-ctn {
-        padding: 1.5rem 1rem 2.5rem;
+        flex-grow: 1;
+        width: 100%;
+        max-width: 26rem;
+        padding: 0 !important;
+        align-items: center;
     }
 
     .fi-simple-layout .fi-simple-main {
+        width: 100% !important;
+        max-width: 26rem;
+        margin: 0 !important;
+        padding: 1.35rem 1.35rem 1.2rem !important;
         background: #fff !important;
-        border-radius: 1.35rem !important;
+        border-radius: 1.25rem !important;
         border: 1px solid rgba(255, 255, 255, 0.18) !important;
         box-shadow:
             0 24px 60px rgba(2, 8, 23, 0.45),
@@ -21,11 +35,16 @@
         transition: box-shadow 200ms ease, transform 200ms ease;
     }
 
+    .fi-simple-layout .fi-simple-page > section {
+        gap: 1rem !important;
+    }
+
     .fi-simple-layout .fi-simple-header .fi-logo {
         height: auto !important;
         width: auto;
         display: flex;
         justify-content: center;
+        margin-bottom: 0.65rem !important;
     }
 
     .fi-simple-layout .brand-mark-copy {
@@ -33,8 +52,8 @@
     }
 
     .fi-simple-layout .brand-mark-logo {
-        height: 9rem;
-        width: 9rem;
+        height: clamp(4.75rem, 16vmin, 8rem);
+        width: clamp(4.75rem, 16vmin, 8rem);
         object-fit: cover;
         border-radius: 50%;
         background: #fff;
@@ -54,6 +73,7 @@
     .fi-simple-layout .fi-simple-header-heading {
         color: #0b1b3a !important;
         letter-spacing: -0.02em;
+        font-size: clamp(1.25rem, 2.4vw, 1.5rem) !important;
     }
 
     .fi-simple-layout .fi-simple-header-subheading {
@@ -62,6 +82,66 @@
         letter-spacing: 0.12em;
         font-size: 0.7rem !important;
         font-weight: 600;
+        margin-top: 0.35rem !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-fo-field-wrp {
+        gap: 0.35rem;
+    }
+
+    .login-brand-foot {
+        margin: 0.85rem 0 0;
+        padding: 0 0.5rem;
+        text-align: center;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(226, 232, 240, 0.72);
+    }
+
+    @media (max-width: 480px) {
+        .fi-simple-layout {
+            padding: 0.5rem 0.75rem;
+        }
+
+        .fi-simple-layout .fi-simple-main {
+            padding: 1.1rem 1rem 1rem !important;
+            border-radius: 1rem !important;
+        }
+    }
+
+    @media (max-height: 740px) {
+        .fi-simple-layout .brand-mark-logo {
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+
+        .fi-simple-layout .fi-simple-header .fi-logo {
+            margin-bottom: 0.4rem !important;
+        }
+
+        .fi-simple-layout .fi-simple-page > section {
+            gap: 0.75rem !important;
+        }
+
+        .login-brand-foot {
+            margin-top: 0.6rem;
+        }
+    }
+
+    @media (max-height: 620px) {
+        .fi-simple-layout .brand-mark-logo {
+            height: 3.75rem;
+            width: 3.75rem;
+        }
+
+        .fi-simple-layout .fi-simple-header-heading {
+            font-size: 1.15rem !important;
+        }
+
+        .login-brand-foot {
+            display: none;
+        }
     }
 
     /* Kartu putih: jangan ikut dark mode (label/input putih jadi tenggelam). */
@@ -93,6 +173,28 @@
         -webkit-text-fill-color: #94a3b8;
     }
 
+    .fi-simple-layout .fi-simple-main .fi-checkbox-input {
+        background-color: #fff !important;
+        color: #1a4fd8 !important;
+        box-shadow: 0 0 0 1.5px rgb(15 23 42 / 0.4) !important;
+        border: none !important;
+        transition: background-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-checkbox-input:hover {
+        box-shadow: 0 0 0 1.5px #1a4fd8 !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-checkbox-input:checked {
+        background-color: #1a4fd8 !important;
+        box-shadow: 0 0 0 1.5px #1a4fd8 !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-checkbox-input:focus-visible {
+        outline: 2px solid #1a4fd8;
+        outline-offset: 2px;
+    }
+
     .fi-simple-layout .fi-simple-main .fi-checkbox-input + span,
     .fi-simple-layout .fi-simple-main .fi-fo-checkbox-wrp span {
         color: #334155 !important;
@@ -113,15 +215,6 @@
     .fi-simple-layout .fi-btn.fi-color-primary:focus-visible {
         outline: 2px solid #1a4fd8;
         outline-offset: 3px;
-    }
-
-    .login-brand-foot {
-        margin: 0 0 2rem;
-        text-align: center;
-        font-size: 0.75rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(226, 232, 240, 0.72);
     }
 
     .fi-sidebar-header {
