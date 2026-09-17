@@ -4,6 +4,12 @@ Sistem pembukuan keuangan usaha cuci motor dan mobil. Bukan POS/kasir: admin men
 
 Stack: Laravel 11, Filament 3, MySQL (sesuai environment proyek ini).
 
+## Tampilan login
+
+Halaman masuk panel admin (`/admin`), dengan logo bundar Blue Shark Wash.
+
+![Halaman login Blue Shark Wash](docs/screenshots/login.png)
+
 ## Menjalankan
 
 ```bash
@@ -11,10 +17,12 @@ composer install
 copy .env.example .env
 php artisan key:generate
 php artisan migrate --seed
-php artisan serve
+php artisan serve --host=127.0.0.1 --port=8101
 ```
 
-Panel admin: `/admin`
+Di `.env`, set `APP_URL=http://127.0.0.1:8101` (port **8101**, jangan 8080).
+
+Panel admin: [http://127.0.0.1:8101/admin](http://127.0.0.1:8101/admin)
 
 Akun seed:
 

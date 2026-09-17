@@ -64,6 +64,40 @@
         font-weight: 600;
     }
 
+    /* Kartu putih: jangan ikut dark mode (label/input putih jadi tenggelam). */
+    .fi-simple-layout .fi-simple-main .fi-fo-field-wrp-label > span {
+        color: #0b1b3a !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-fo-field-wrp-label sup {
+        color: #e11d48 !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-input-wrp {
+        background-color: #fff !important;
+        box-shadow: 0 0 0 1px rgb(15 23 42 / 0.18) !important;
+        transition: box-shadow 160ms ease;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-input-wrp:focus-within {
+        box-shadow: 0 0 0 2px #1a4fd8 !important;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-input {
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-input::placeholder {
+        color: #94a3b8 !important;
+        -webkit-text-fill-color: #94a3b8;
+    }
+
+    .fi-simple-layout .fi-simple-main .fi-checkbox-input + span,
+    .fi-simple-layout .fi-simple-main .fi-fo-checkbox-wrp span {
+        color: #334155 !important;
+    }
+
     .fi-simple-layout .fi-btn.fi-color-primary {
         background-image: linear-gradient(180deg, #2b7fff 0%, #1a4fd8 100%) !important;
         box-shadow: 0 8px 18px rgba(26, 79, 216, 0.32);
